@@ -4,6 +4,7 @@ This is where all the assets are for lunar V1.
 
 # Deploying
 
-Check out [lunar](https://github.com/lunar-proxy/lunar-v1) to deploy.
+For instructions on how to deploy go to [lunar's github](https://github.com/lunar-proxy/lunar-v1).
 
-# Making changes
+# Contribuating
+

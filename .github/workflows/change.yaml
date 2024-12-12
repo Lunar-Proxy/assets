@@ -1,4 +1,4 @@
-name: Move Directories to Branches
+name: Move Directories to Specific Branches
 
 on:
   push:
@@ -13,6 +13,9 @@ jobs:
       - name: Move img directory to images branch
         run: |
           git checkout -b images || git checkout images
+          git fetch origin main
+          git merge origin/main
+          git rm -rf .
           mv img .
           git add .
           git commit -m "Move img directory to images branch"
@@ -21,6 +24,9 @@ jobs:
       - name: Move json directory to json branch
         run: |
           git checkout -b json || git checkout json
+          git fetch origin main
+          git merge origin/main
+          git rm -rf .
           mv json .
           git add .
           git commit -m "Move json directory to json branch"

@@ -1,7 +1,7 @@
 [
   {
     "name": "Discord - Login",
-    "image": "/assets/img/dc.png",
+    "image": "/img/dc.png",
     "link": [
       { "name": "Discord", "url": "https://discord.com/login" },
       { "name": "Discord Canary", "url": "https://canary.discord.com/login" },
@@ -14,7 +14,7 @@
   },
   {
     "name": "W3schools",
-    "image": "/assets/img/w3.png",
+    "image": "/img/w3.png",
     "link": "https://www.w3schools.com/",
     "error": false
   }

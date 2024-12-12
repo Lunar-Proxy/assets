@@ -1,33 +1,38 @@
-name: Move Directories to Specific Branches
+name: Move Folders to Branches
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  move-directories:
+  move-folders:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-      - name: Move img directory to images branch
+      - name: Set up Git
         run: |
-          git checkout -b images || git checkout images
-          git fetch origin main
-          git merge origin/main
-          git rm -rf .
-          mv img .
-          git add .
-          git commit -m "Move img directory to images branch"
-          git push
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Move json directory to json branch
+      - name: Move img folder to images branch
         run: |
-          git checkout -b json || git checkout json
-          git fetch origin main
-          git merge origin/main
-          git rm -rf .
-          mv json .
-          git add .
-          git commit -m "Move json directory to json branch"
-          git push
+          git checkout --orphan images
+          git reset --hard
+          git add img
+          git commit -m "Move img folder to images branch"
+          git push --force origin images
+
+      - name: Switch back to main branch
+        run: git checkout main
+
+      - name: Move json folder to json branch
+        run: |
+          git checkout --orphan json
+          git reset --hard
+          git add json
+          git commit -m "Move json folder to json branch"
+          git push --force origin json

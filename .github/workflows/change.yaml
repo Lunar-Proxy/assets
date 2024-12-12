@@ -12,8 +12,7 @@ jobs:
 
       - name: Move img directory to images branch
         run: |
-          git checkout images -b images || git checkout images
-          git rm -rf .
+          git checkout -b images || git checkout images
           mv img .
           git add .
           git commit -m "Move img directory to images branch"
@@ -21,8 +20,7 @@ jobs:
 
       - name: Move json directory to json branch
         run: |
-          git checkout json -b json || git checkout json
-          git rm -rf .
+          git checkout -b json || git checkout json
           mv json .
           git add .
           git commit -m "Move json directory to json branch"

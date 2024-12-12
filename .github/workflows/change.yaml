@@ -1,4 +1,4 @@
-name: Move Folders to Branches
+name: Move Folders to Specific Branches
 
 on:
   push:
@@ -20,19 +20,31 @@ jobs:
 
       - name: Move img folder to images branch
         run: |
-          git checkout --orphan images
-          git reset --hard
-          git add img
-          git commit -m "Move img folder to images branch"
-          git push --force origin images
+          if [ -d "img" ]; then
+            git checkout --orphan images
+            git reset --hard
+            git clean -fdx
+            cp -r img/* .
+            git add .
+            git commit -m "Add img folder to images branch"
+            git push --force origin images
+          else
+            echo "No img folder found; skipping images branch creation."
+          fi
 
       - name: Switch back to main branch
         run: git checkout main
 
       - name: Move json folder to json branch
         run: |
-          git checkout --orphan json
-          git reset --hard
-          git add json
-          git commit -m "Move json folder to json branch"
-          git push --force origin json
+          if [ -d "json" ]; then
+            git checkout --orphan json
+            git reset --hard
+            git clean -fdx
+            cp -r json/* .
+            git add .
+            git commit -m "Add json folder to json branch"
+            git push --force origin json
+          else
+            echo "No json folder found; skipping json branch creation."
+          fi

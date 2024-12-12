@@ -6,10 +6,11 @@ This is where all the games & app assets are for lunar V1.
 
 For Instructions go to [Lunar's github](https://github.com/lunar-proxy/lunar-v1).
 
-# Where do i find the json files and images?
+# How 2 find the assets?
 
-Find json [here](https://github.com/Lunar-Proxy/assets/tree/json) 
+Find the json [here](https://github.com/Lunar-Proxy/assets/tree/json) 
 
-Find images [here](https://github.com/Lunar-Proxy/assets/tree/images) 
+Find the images [here](https://github.com/Lunar-Proxy/assets/tree/images) 
+
 # Contributing
 

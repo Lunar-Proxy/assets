@@ -24,7 +24,6 @@ jobs:
             git checkout --orphan images
             git reset --hard
             git clean -fdx
-            mkdir -p img
             cp -r img/. .
             git add .
             git commit -m "Add img folder to images branch"
@@ -42,7 +41,6 @@ jobs:
             git checkout --orphan json
             git reset --hard
             git clean -fdx
-            mkdir -p json
             cp -r json/. .
             git add .
             git commit -m "Add json folder to json branch"

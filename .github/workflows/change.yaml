@@ -1,0 +1,35 @@
+name: Move dirs to Branches
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  move-directories:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Move img directory to images branch
+        uses: actions/checkout@v3
+        with:
+          ref: images
+          persist-credentials: false
+        run: |
+          git rm -rf .
+          mv img .
+          git add .
+          git commit -m "Move img directory to images branch"
+          git push
+
+      - name: Move json directory to json branch
+        uses: actions/checkout@v3
+        with:
+          ref: json
+          persist-credentials: false
+        run: |
+          git rm -rf .
+          mv json .
+          git add .
+          git commit -m "Move json directory to json branch"
+          git push

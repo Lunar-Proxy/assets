@@ -8,7 +8,7 @@ For Instructions go to [Lunar's github](https://github.com/lunar-proxy/lunar-v1)
 
 # How to find the assets?
 
-Find the json [here](https://github.com/Lunar-Proxy/assets/tree/json) 
+Find the json [here](https://github.com/Lunar-Proxy/assets/tree/JSON) 
 
 Find the images [here](https://github.com/Lunar-Proxy/assets/tree/images) 
 
